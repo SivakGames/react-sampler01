@@ -11,10 +11,8 @@ class ListItemOfDoom extends Component
 		return (
 			<React.Fragment>
 				<li>
-					<div>
-						<p>{parts.value}</p>
-						<button type="button" onClick={() => onIncrement(parts)}>+1</button>
-					</div>
+					<p>{parts.value}</p>
+					<div class="btns"><button type="button" onClick={() => onIncrement(parts)}>+1</button></div>
 				</li>
 			</React.Fragment>
 

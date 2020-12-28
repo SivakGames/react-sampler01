@@ -31,7 +31,7 @@ class ListOfDoom extends Component
 	render() { 
 		return (
 		<React.Fragment>
-			<ul>
+			<ul class="list-of-counters">
 			{	
 				this.state.listParts.map(
 					(part,i) => 
