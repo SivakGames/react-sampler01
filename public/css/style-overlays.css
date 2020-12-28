@@ -1,0 +1,153 @@
+/*===============================================================================================================================================*/
+/*===============================================================================================================================================*/
+/* 	Document overlays (general)
+----------------------------------------------------------------------------
+	Things that can overlay the entire document.
+	z-index and exact positioning should be set per element
+/*===============================================================================================================================================*/
+/*===============================================================================================================================================*/
+#document-overlays
+{	overflow: hidden;
+}
+
+#document-overlays input[type=checkbox]
+{	display: none;
+	visibility: hidden;
+	opacity: 0;
+}
+
+/* Make entire document dark */
+/* ------------------------------------------------------------------------------------------- */
+#document-overlays .darken,
+#document-overlays .mobile-darken
+{	background-color: #000;
+	position: absolute;
+	left: -100%;
+	right: 100%;
+	top: 0;
+	bottom: 0;
+	z-index: 2;
+	transition: opacity 0.3s ease-in-out;
+	opacity: 0;
+}
+
+#document-overlays input[name=bDarken]:checked ~ .darken,
+#document-overlays input[name=bMobileDarken]:checked ~ .mobile-darken
+{	left: 0;
+	right: 0;
+	opacity: 0.5;
+}
+
+#document-overlays .mobile-darken
+{	z-index: 11;
+	display: none;
+}
+
+#document-overlays input[name=bMobileDarken]:checked ~ .mobile-darken
+{	opacity: 0.65;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 1023px)
+{	#document-overlays .mobile-darken
+	{	display: block;
+	}
+}
+
+/* Modal Window (general) */
+/* ------------------------------------------------------------------------------------------- */
+#document-overlays .modal-wrap
+{	position: fixed;
+	z-index: 3;
+	left: -100%;
+	right: 100%;
+	top: 0%;
+	bottom: 0;
+	min-width: 320px;
+	max-width: 100%;
+	max-height: 100vh;
+	box-sizing: border-box;
+	padding: 1em 1em;
+	overflow: hidden;
+	flex-direction: column;
+	justify-content: center;
+}
+
+/* Turn on */
+#document-overlays input[name=bModal]:checked ~ .modal-wrap
+{	display: block;
+	display: flex;
+	left: 0%;
+	right: 0%;
+}
+
+#document-overlays .modal-window
+{	background-color: #DDD;
+	box-sizing: border-box;
+	max-width: 100%;
+	max-height: 100%;
+	border: 1px solid;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	overflow: hidden;
+	
+	transition-property: transform;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;
+	transition-delay: 0.1s;
+	transform: scaleX(0);
+	transform-origin: 0 0%;
+}
+
+/* Animation */
+#document-overlays input[name=bModal]:checked ~ .modal-wrap .modal-window
+{	transform: none;
+}
+
+
+/* Title/nav bar (if need be) */
+#document-overlays .modal-title-bar
+{	background-color: #999;
+	padding: 0.5em;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#document-overlays .modal-title-bar .modal-title-text
+{	flex: 1 1 0%;
+}
+
+#document-overlays .modal-title-bar button
+{	background-color: Crimson;
+	width: 2em;
+	line-height: 2em;
+	text-align: center;
+	cursor: pointer;
+	color: White;
+}
+
+#document-overlays .modal-title-bar button:hover
+{	background-color: Red;
+}
+
+/* Main area */
+#document-overlays .modal-main
+{	padding: 1em;
+	min-width: 100px;
+	box-sizing: border-box;
+	flex: 1 1 0%;
+	overflow: hidden;
+}
+
+
+/* Modal main content goes here */
+#document-overlays .modal-content
+{	background-color: #FFF;
+	max-height: 100%;
+	box-sizing: border-box;
+	padding: 1em;
+	overflow: auto;
+}

@@ -1,0 +1,1191 @@
+:root
+{	--boxBGcolor: #F6FFF2;
+	--greenText: #ECFFE4;
+	--peppermintText: #D4FFEC;
+
+	--offGreen: #C8FF80;
+	--offPeppermint: #80FFC8;
+	
+	--midGreen: #648040;
+	--midGreenHighlight: #84A060;
+	--midPeppermint: #408064;
+	--midPeppermintHighlight: #60A084;
+
+/* Section-specific */
+	--headerBG: #000C00;
+	--naviBG: rgba(192,255,192,0.1);
+	--naviSolidBG: rgba(64,128,64,0.875);
+
+	--aboutBG: #303030;
+	--aboutColor: var(--greenText);
+
+	--skillsBG: #202020;
+	--skillsColor: var(--greenText);
+	--skillsBoxBG: var(--boxBGcolor);
+
+	--projectsBG: #30A080;
+	--projectsGradientBG: linear-gradient(135deg, #472 0, #204820 25%,#204820 75%, #274 100%);
+	--projectsBoxBG: rgba(246,255,242,0.85);
+	--projectsHeaderBG: linear-gradient(to right, #CFB, #8FD);
+	--projectsGoBtnBG: var(--midPeppermint);
+	--projectsGoBtnHighlight: var(--midPeppermintHighlight);
+	--projectsInfoBtnBG: var(--midGreen);
+	--projectsInfoBtnHighlight: var(--midGreenHighlight);
+
+	--contactBG: #002020;
+	--contactColor: var(--peppermintText);
+	--contactFieldLabelBG: #164C36;
+
+	--footerBG: #080808;
+	
+/* Fonts */
+	--font-noto: "Noto Sans CJK JP Medium", sans-serif;
+	--font-input: "Input Mono", Consolas, "Lucida Console", Monaco, monospace;
+	--font-play: "Play", Verdana, Geneva, Tahoma, sans-serif;
+	
+	--font-main: var(--font-play);
+}
+
+/*===============================================================================================================================================*/
+/*===============================================================================================================================================*/
+#document-wrap
+{	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-family: var(--font-main);
+	position: relative;
+	font-size: 28px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 3800px)
+{	#document-wrap
+	{	font-size: 0.75vw;
+	}
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 2400px)
+{	#document-wrap
+	{	font-size: 18px;
+	}
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 1600px)
+{	#document-wrap
+	{	font-size: 16px;
+	}
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 1023px)
+{	#document-wrap
+	{	font-size: 15px;
+	}
+}
+
+/*===============================================================================================================================================*/
+/*===============================================================================================================================================*/
+/*===============================================================================================================================================*/
+/*===============================================================================================================================================*/
+.content-wrap
+{	padding-left: 10px;
+	padding-right: 10px;
+}
+.content-wrap.pad
+{	padding-top: 6.1em;
+	padding-bottom: 6.1em;
+}
+
+.content-wrap .content
+{	max-width: 60%;
+	margin: 0 auto;
+	
+}
+
+.content-wrap .content:not(:last-child)
+{	margin-bottom: 6em;
+}
+
+.content-wrap .sub-content:not(:last-child)
+{	margin-bottom: 4em;
+}
+
+/* */
+.content-wrap.black
+{	background-color: #333;
+	color: White;
+}
+.content-wrap.green
+{	background-color: var(--midGreen);
+}
+.content-wrap.cyan
+{	background-color: var(--midPeppermint);
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 2400px)
+{	.content-wrap .content
+	{	max-width: 1440px;
+	}
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 1600px)
+{	.content-wrap .content:not(:last-child)
+	{	margin-bottom: 5em;
+	}
+	.content-wrap .sub-content:not(:last-child)
+	{	margin-bottom: 3em;
+	}
+}
+
+/*===============================================================================================================================================*/
+/*===============================================================================================================================================*/
+header
+{	background-color: #444;
+	position: relative;
+}
+
+header .layout
+{	max-width: 60%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header img
+{	width: 200px;
+	margin: 0;
+}
+
+header p
+{	color: White;
+	font-size: 1.5em;
+	flex: 1 1 0%;
+}
+
+
+/*===============================================================================================================================================*/
+/*===============================================================================================================================================*/
+main
+{	flex: 1 1 0%;
+	position: relative;
+	z-index: 0;
+	
+}
+
+
+/*===============================================================================================================================================*/
+/*===============================================================================================================================================*/
+/* Parts */
+/*===============================================================================================================================================*/
+/*===============================================================================================================================================*/
+.heading1
+{	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-left-width: 0.125em;
+	border-left-style: solid;
+	border-left-color: var(--offGreen);
+	border-radius: 0.065em 0 0 0.065em / 0.2em;
+	padding-left: 0.5em;
+	font-size: 3em;
+	
+	line-height: 1.4em;	
+	font-weight: bold;
+}
+.heading1:not(:last-child)
+{	margin-bottom: 0.75em;
+}
+
+.heading1::after
+{	background-color: currentColor;
+	content: "";
+	height: 1px;
+	display: block;
+	flex: 1 1 0%;
+	margin-left: 1em;
+	opacity: 0.25;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 1023px)
+{	.heading1
+	{	font-size: 2.5em;
+		padding-left: 0.35em;
+	}
+	.heading1::after
+	{	margin-left: 0.5em;
+	}
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 599px)
+{	.heading1
+	{	font-size: 2em;
+	}
+}
+
+/* */
+.heading2
+{	background-color: Teal;
+	padding: 0.25em;
+	font-size: 1.5em;
+	
+	font-weight: bold;
+	text-align: center;
+}
+
+.heading2:not(:last-child)
+{	margin-bottom: 1em;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 1023px)
+{	.heading2
+	{	font-size: 1.3em;
+	}
+}
+
+/* */
+.heading3
+{	font-size: 1.1em;
+	font-weight: bold;
+}
+.heading3:not(:last-child)
+{	margin-bottom: 0.5em;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 1023px)
+{	.heading3
+	{	font-size: 1.05em;
+	}
+}
+
+/* */
+.lead-text
+{	font-size: 1.25em;
+}
+.lead-text:not(:last-child)
+{	margin-bottom: 1.5em;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 1023px)
+{	.lead-text
+	{	font-size: 1.1em;
+	}
+}
+
+/*===============================================================================================================================================*/
+/* Non-JS browsers */
+/* ----- */
+.box.no-js
+{	background-color: #FEC;
+	padding: 1em;
+	border-radius: 1em;
+	color: Crimson;
+}
+.box.no-js p
+{	display: flex;
+	align-items: center;
+}
+.box.no-js p strong
+{	font-size: 3em;
+	line-height: 1.2em;
+	margin-right: 0.5em;
+}
+.box.no-js p span
+{	font-weight: bold;
+}
+
+/*===============================================================================================================================================*/
+/*===============================================================================================================================================*/
+/*===============================================================================================================================================*/
+/*===============================================================================================================================================*/
+#about
+{	background-color: Black;
+	background-color: var(--aboutBG, Black);
+	color: honeydew;
+	color: var(--aboutColor, honeydew);
+	position: relative;
+}
+
+#about-main-profile
+{	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-direction: row-reverse;
+}
+
+#about-main-profile .text
+{	flex: 1 1 0%;
+}
+
+#about-main-profile figure
+{	margin-right: 1.25em;
+	width: 30%;
+	padding: 0.5em;
+	box-sizing: border-box;
+	border-width: 2px;
+	border-style: solid;
+	border-color: var(--offGreen);
+	border-radius: 0.2em;
+}
+#about-main-profile figure img
+{	width: 100%;
+	height: 100%;
+	border-radius: 0.2em;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 799px)
+{	#about-main-profile
+	{	display: block;
+	}
+	#about-main-profile .text
+	{	margin-bottom: 20px;
+	}
+	#about-main-profile figure
+	{	margin: 0 auto;
+		width: 300px;
+		max-width: 80%;
+		padding: 10px;
+		border-radius: 5px;
+	}
+}
+
+/*===============================================================================================================================================*/
+/*===============================================================================================================================================*/
+/*===============================================================================================================================================*/
+/*===============================================================================================================================================*/
+#skills
+{	background-color: Black;
+	background-color: var(--skillsBG, Black);
+	color: honeydew;
+	color: var(--skillsColor, honeydew);
+}
+
+.skill-list-box.box
+{	background-color: White;
+	background-color: var(--skillsBoxBG, White);
+	border-radius: 1em;
+	padding: 1.4em;
+	font-family: var(--font-input);
+	color: var(--text-color);
+	font-size: 0.875em;
+}
+
+/* */
+#skills .mini-header
+{	background-color: Lime;
+	background-color: var(--offGreen, Lime);
+	font-weight: bold;
+	font-size: 1.05em;
+	padding: 0.25em 0.5em;
+}
+
+#skills .mini-header:not(:last-child)
+{	margin-bottom: 0.75em;
+}
+
+/* */
+.skill-list
+{	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	justify-content: space-between;
+}
+
+.skill-list:not(:last-child)
+{	margin-bottom: 2em;
+}
+
+.skill-list > *
+{	flex: 0 0 48%;
+}
+
+.skill-list > :nth-child(n+3)
+{	margin-top: 0.25em;
+}
+
+.skill-list.pre-icon-parent.dot > ::before
+{	background-color: var(--midGreen);
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 599px)
+{	.skill-list-box.box
+	{	padding: 20px 10px;
+		border-radius: 10px;
+	}
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 479px)
+{	.skill-list
+	{	display: block;
+	}
+	.skill-list > :nth-child(n+2)
+	{	margin-top: 5px;
+	}
+}
+
+
+/*===============================================================================================================================================*/
+/*===============================================================================================================================================*/
+/*===============================================================================================================================================*/
+/*===============================================================================================================================================*/
+#projects
+{	background-color: Green;
+	background-color: var(--projectsBG, Green);
+	background-image: var(--projectsGradientBG);
+}
+
+#projects-content
+{	background-color: White;
+	background-color: var(--projectsBoxBG, White);
+	padding: 2.5em;
+	border-radius: 1em;
+	box-sizing: border-box;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 1600px)
+{	#projects-content
+	{	padding: 1.5em;
+	}
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 599px)
+{	#projects-content
+	{	padding: 20px 10px;
+		border-radius: 10px;
+	}
+}
+
+/* ------------------ */
+#projects .heading1
+{	border-left-color: var(--projectsBG);
+}
+
+#projects .heading2
+{	background-color: LightGreen;
+	background-color: var(--offGreen, LightGreen);
+	background-image: var(--projectsHeaderBG);
+}
+
+/* ---- */
+#projects .project-list
+{	display: flex;
+	justify-content: space-between;
+	margin: 0 -0.75em;
+}
+
+#projects .project-list *
+{	box-sizing: border-box;
+}
+
+#projects .project-list > *
+{	flex: 1 1 0%;
+	padding: 0 0.75em;
+	display: flex;
+	flex-direction: column;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 1600px)
+{	#projects .project-list
+	{	margin-left: -0.5em;
+		margin-right: -0.5em;
+	}
+	
+	#projects .project-list > *
+	{	padding-left: 0.5em;
+		padding-right: 0.5em;
+	}
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 1023px)
+{	#projects .project-list
+	{	margin-left: 0;
+		margin-right: 0;
+		display: block;
+	}
+	
+	#projects .project-list > *
+	{	padding-left: 0;
+		padding-right: 0;
+	}
+	#projects .project-list > :not(:last-child)
+	{	margin-bottom: 20px;
+	}
+}
+
+/* --- */
+#projects .project-list .site-info
+{	background-color: #FCFFFC;
+	flex: 1 1 0%;
+	
+	display: flex;
+	flex-direction: column;
+	border-radius: 0.375em;
+	border: 1px solid #AAA;
+	padding: 1em;
+	color: var(--text-color);
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 1023px)
+{	#projects .project-list .site-info
+	{	display: grid;
+		grid-template-columns: 35% 1fr;
+		grid-template-rows: auto 1fr auto;
+		grid-gap: 0 20px;
+	}
+	#projects .project-list .site-info .heading3
+	{	grid-column: 1/3;
+		grid-row: 1/2;
+	}
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 599px)
+{	#projects .project-list .site-info
+	{	display: block;
+	}
+}
+
+/* --- */
+#projects .project-list .site-info figure
+{	background-color: #CCC;
+	display: block;
+	margin: 0 0 0.5em;
+	padding-top: 50%;
+	position: relative;
+	border: 1px solid #CCC;
+}
+#projects .project-list .site-info figure a
+{	transition: opacity 0.3s ease-in-out;
+	display: block;
+}
+
+#projects .project-list .site-info figure a:hover
+{	opacity: 0.7;
+}
+
+#projects .project-list .site-info figure img
+{	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 1023px)
+{	#projects .project-list .site-info figure
+	{	grid-row: 2/4;
+		margin-bottom: 0;
+	}
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 599px)
+{	#projects .project-list .site-info figure
+	{	margin-bottom: 20px;
+	}
+}
+
+/* --- */
+#projects .project-list .site-info p
+{	flex: 1 1 0%;
+	margin-bottom: 1.5em;
+}
+
+/* --- */
+#projects .project-list .site-info .btns
+{	margin: 0;
+	font-size: 0.95em;
+}
+
+#projects .project-list .site-info .btns > *
+{	display: block;
+	display: flex;
+	border: 1px solid;
+
+	padding: 0.25em;
+	align-items: center;
+	justify-content: center;
+	width: auto;
+	flex: 0 0 48%;
+	margin: 0;
+	
+	color: White;
+	text-align: center;
+	font-weight: bold;
+	transition: background-color 0.3s ease-in-out;
+}
+
+#projects .project-list .site-info .btns > .info
+{	background-color: teal;
+	background-color: var(--projectsInfoBtnBG, Teal);
+	border-color: var(--projectsInfoBtnBG);
+}
+#projects .project-list .site-info .btns > .info:hover
+{	background-color: turquoise;
+	background-color: var(--projectsInfoBtnHighlight, turquoise);
+}
+#projects .project-list .site-info .btns > .external
+{	background-color: darkgreen;
+	background-color: var(--projectsGoBtnBG, darkgreen);
+	border-color: var(--projectsGoBtnBG);
+}
+#projects .project-list .site-info .btns > .external:hover
+{	background-color: limegreen;
+	background-color: var(--projectsGoBtnHighlight, limegreen);
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 1199px)
+{	#projects .project-list .site-info .btns
+	{	display: block;
+	}
+	#projects .project-list .site-info .btns > *
+	{	padding-top: 0.5em;
+		padding-bottom: 0.5em;
+	}
+	#projects .project-list .site-info .btns > :not(:last-child)
+	{	margin-bottom: 20px;
+	}
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 1023px)
+{	#projects .project-list .site-info .btns
+	{	display: flex;
+	}
+	#projects .project-list .site-info .btns > :not(:last-child)
+	{	margin-bottom: 0;
+	}
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 399px)
+{	#projects .project-list .site-info .btns
+	{	display: block;
+	}
+	#projects .project-list .site-info .btns > :not(:last-child)
+	{	margin-bottom: 20px;
+	}
+}
+
+/* ---- */
+#projects .project-list .site-info-extra
+{	display: none;
+}
+
+/*===============================================================================================================================================*/
+/*===============================================================================================================================================*/
+#document-overlays .modal-title-bar
+{	background-color: #444;
+}
+#document-overlays .modal-content
+{	padding: 0;
+}
+#document-overlays .modal-wrap
+{	padding-top: 6em;
+}
+#document-overlays .modal-title-bar button
+{	color: White !important;
+}
+
+.site-info-extra
+{	font-size: 1em;
+	padding: 1em;
+}
+
+.site-info-extra .layout
+{	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto 1fr;
+	grid-gap: 1em 1.5em;
+	max-width: 45vw;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 2400px)
+{	.site-info-extra .layout
+	{	max-width: 100%;
+		width: 1200px;
+	}
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 1023px)
+{	.site-info-extra .layout
+	{	display: block;
+	}
+}
+
+/* -------- */
+.site-info-extra .layout figure
+{	grid-column: 1/2;
+	grid-row: 1/3;
+	align-self: start;
+	margin-bottom: 0.5em;
+	border: 1px solid #CCC;
+}
+
+.site-info-extra .layout figure img
+{	width: 100%;
+}
+
+.site-info-extra .layout figure img:not(:last-child)
+{	margin-bottom: 1em;
+}
+
+/* ---- */
+.site-info-extra .layout .heading3
+{	grid-column: 2/3;
+	grid-row: 1/2;
+}
+
+/* -------- */
+.site-info-extra .layout .text
+{	grid-column: 2/3;
+	grid-row: 2/4;
+	margin-bottom: 0.5em;
+}
+
+.site-info-extra .layout .text p:not(:last-child)
+{	margin-bottom: 1.5em;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 1023px)
+{	.site-info-extra .layout .text
+	{	margin-bottom: 20px;
+	}
+}
+
+/* --- */
+.site-info-extra .roles
+{	grid-column: 1/3;
+}
+
+.site-info-extra .role-header
+{	font-size: 0.9em;
+	font-weight: bold;
+	margin-bottom: 0.5em;
+	text-align: center;
+}
+.site-info-extra .role-list
+{	display: flex;
+	color: Teal;
+	color: var(--midPeppermint, Teal);
+	font-size: 0.85em;
+	font-family: var(--font-input);
+	text-align: center;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	margin-top: -0.5em;
+}
+
+.site-info-extra .role-list > *
+{	background-color: Cyan;
+	background-color: var(--offPeppermint, Cyan);
+	padding: 0.25em 1em;
+	margin-top: 0.5em;
+	
+}
+.site-info-extra .role-list > :not(:last-child)
+{	margin-right: 1em;
+}
+
+/* */
+.site-info-extra .btns
+{	width: 100%;
+	margin: 0;
+	font-weight: bold;
+}
+
+.site-info-extra .btns > *
+{	background-color: Teal;
+	background-color: var(--projectsGoBtnBG, Teal);
+	color: White;
+}
+.site-info-extra .btns > a:hover
+{	background-color: turquoise;
+	background-color: var(--projectsGoBtnHighlight, turquoise);
+}
+
+/*===============================================================================================================================================*/
+/*===============================================================================================================================================*/
+/*===============================================================================================================================================*/
+/*===============================================================================================================================================*/
+#contact
+{	background-color: Teal;
+	background-color: var(--contactBG, Teal);
+	color: LightCyan;
+	color: var(--contactColor, LightCyan);
+}
+
+#contact .heading1
+{	border-left-color: var(--offPeppermint);
+}
+
+/* ----- */
+#contact form
+{	background-color: rgba(0,10,10,0.05);
+	max-width: 80%;
+	box-sizing: border-box;
+	border-width: 2px;
+	border-style: solid;
+	border-color: Cyan;
+	border-color: var(--offPeppermint, Cyan);
+	border-radius: 0.5em;
+	padding: 1.5em;
+	margin: 0 auto;
+	overflow: hidden;
+	display: block;
+	color: White;
+	position: relative;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 1600px)
+{	#contact form
+	{	max-width: 1200px;
+	}
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 599px)
+{	#contact form
+	{	padding: 20px 10px;
+	}
+}
+
+#contact form .fields:not(:last-child)
+{	margin-bottom: 4em;
+}
+
+#contact form .fields > *
+{	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+}
+
+#contact form .fields > :not(:last-child)
+{	margin-bottom: 1.75em
+}
+
+#contact form .fields label
+{	background-color: rgba(32,64,64,0.7);
+	padding: 0.25em 0.5em;
+	margin-bottom: 0.25em;
+	color: var(--contactColor);
+	font-size: 1.1em;
+	text-align: left;
+	position: relative;
+}
+
+#contact form .fields label.ok
+{	background-color: rgba(32,96,64,0.7);
+}
+#contact form .fields label.ok::after
+{	content: "";
+	width: 0.5em;
+	height: 1em;
+	border-bottom-width: 0.25em;
+	border-bottom-style: solid;
+	border-bottom-color: var(--offPeppermint);
+	border-right-width: 0.25em;
+	border-right-style: solid;
+	border-right-color: var(--offPeppermint);
+	display: block;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	position: absolute;
+	right: 0.75em;
+	top: 0.25em;
+}
+
+
+#contact form .fields .input-wrap
+{	background-color: rgba(0,0,0,0.5);
+	flex: 1 1 0%;
+	color: White;
+}
+
+/* ----- */
+#contact form input:not([type=checkbox]):not([type=radio]):not([type=range]),
+#contact form textarea
+{	background-color: transparent;
+	border-width: 0;
+	border-bottom-width: 2px;
+	border-style: solid;
+	border-color: transparent;
+	font-size: 1.25em;
+	font-family: var(--font-input);
+	transition: .3s background-color ease-in-out;
+	padding: 0.25em;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 2400px)
+{	#contact form input:not([type=checkbox]):not([type=radio]):not([type=range]),
+	#contact form textarea
+	{	font-size: 20px;
+	}
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 1600px)
+{	#contact form input:not([type=checkbox]):not([type=radio]):not([type=range]),
+	#contact form textarea
+	{	font-size: 16px;
+	}
+}
+
+/* --- */
+#contact form textarea
+{	min-height: 14em;
+}
+
+/* Invalid */
+#contact form input:not([type=checkbox]):not([type=radio]):not([type=range]):invalid,
+#contact form textarea:invalid
+{	/* background-color: rgba(255,0,0,0.1); */
+	box-shadow: none;
+}
+
+/* Focus */
+#contact form input:not([type=checkbox]):not([type=radio]):not([type=range]):focus,
+#contact form textarea:focus
+{	background-color: rgba(255,255,255,0.1);
+	border-color: transparent;
+}
+
+#contact form input:not([type=checkbox]):not([type=radio]):not([type=range]):valid:not(:focus),
+#contact form textarea:valid:not(:focus)
+{	background-color: rgba(0,0,0,0.05);
+	box-shadow: none;
+}
+
+/* Animations and other coloring */
+#contact form u
+{	background-image: linear-gradient(to right, #E8FFF0, #88FFF0);
+	height: 2px;
+	display: block;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: -2px;
+	transition: 0.3s transform ease-in-out;
+	-webkit-transform: scale(0);
+	transform: scale(0);
+	-webkit-transform-origin: 0 50%;
+	transform-origin: 0 50%;
+}
+
+#contact form input:not([type=checkbox]):not([type=radio]):not([type=range]):focus + u,
+#contact form textarea:focus + u
+{	-webkit-transform: none;
+	transform: none;
+}
+
+/* ---- */
+#contact form .btns
+{	max-width: 20em;
+}
+
+#form-finalize
+{	background-color: transparent;
+	color: var(--contactColor);
+	border: 2px solid;
+	font-weight: bold;
+	transition: .3s background-color ease-in-out;
+}
+#form-finalize:focus,
+#form-finalize:hover
+{	background-color: #346;
+}
+#form-finalize:disabled
+{	background-color: transparent;
+	opacity: 0.1;
+	cursor: not-allowed;
+}
+
+#form-finalize[type=button]
+{	background-color: transparent;
+	color: #666;
+	opacity: 0.2;
+}
+
+/* ---- */
+#contact form .validate-overlay
+{	background-color: rgba(0,0,0,0.5);
+	position: absolute;
+	z-index: 2;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	
+	color: White;
+	font-size: 3em;
+	text-align: center;
+	font-weight: bold;
+	cursor: wait;
+	display: none;
+}
+
+#contact form .validate-overlay var
+{	display: none;
+}
+
+#contact form .validate-overlay var:first-child
+{	display: inline-block;
+}
+
+#contact form.validating .validate-overlay
+{	display: block;
+	display: flex;
+}
+#contact form.validating.ok .validate-overlay
+{	background-color: rgba(64,128,64,0.875);
+}
+
+#contact form.validating.ok .validate-overlay var
+{	display: none;
+}
+
+#contact form.validating.ok .validate-overlay var:nth-child(2)
+{	display: inline-block;
+}
+
+/* ---- */
+#contact form .sent-overlay
+{	background-color: White;
+	background-color: var(--peppermintText, White);
+	color: var(--text-color);
+	font-size: 3em;
+	text-align: center;
+	right: -100%;
+	left: 100%;
+	top: 0;
+	bottom: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	transition: left 0.5s ease-in, right 0.5s ease-in;
+	position: absolute;
+	z-index: 3;
+}
+
+#contact form .sent-overlay .icon
+{	width: 2em;
+}
+
+#contact form.sent .sent-overlay
+{	left: 0;
+	right: 0;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 1600px)
+{	#contact form .sent-overlay
+	{	font-size: 2.5em;
+	}
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 1023px)
+{	#contact form .sent-overlay
+	{	font-size: 2em;
+	}
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 799px)
+{	#contact form .sent-overlay
+	{	font-size: 1.85em;
+	}
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 599px)
+{	#contact form .sent-overlay
+	{	font-size: 1.75em;
+	}
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 479px)
+{	#contact form .sent-overlay
+	{	font-size: 1.5em;
+	}
+}
+
+/* ------------------------------------------ */
+#form-finalize-bare
+{	max-width: 20em;
+	font-size: 1.25em;
+}
+
+/*===============================================================================================================================================*/
+/*===============================================================================================================================================*/
+/*===============================================================================================================================================*/
+/*===============================================================================================================================================*/
+footer
+{	background-color: Black;
+	background-color: var(--footerBG, Black);
+	color: White;
+	padding: 2em 0;
+	font-size: 0.95em;
+}
+
+footer .layout
+{	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+footer .layout figure
+{	width: 5.5em;
+}
+
+footer .layout figure img
+{	width: 100%;
+}
+footer .layout .text
+{	padding-left: 1em;
+	box-sizing: border-box;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 799px)
+{	footer .layout figure
+	{	width: 5em;
+	}
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (max-width: 599px)
+{	footer .layout figure
+	{	width: 4.5em;
+	}
+	footer .layout .text
+	{	flex: 1 1 0%;
+	}
+}

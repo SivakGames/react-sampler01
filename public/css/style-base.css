@@ -1,0 +1,702 @@
+/*===============================================================================================================================================*/
+/* 
+	General purpose CSS 
+	Revised and Updated: 11/3/2020
+*/
+/*===============================================================================================================================================*/
+
+/*===============================================================================================================================================*/
+/* Font setting variables */
+/*===============================================================================================================================================*/
+:root
+{	--text-color: #333;
+	--link-color: #0090DC;
+
+	--eng-sans-serif-fonts: "Verdana", "Geneva", "Arial", sans-serif;
+	--eng-serif-fonts: "Times New Roman", "Times", serif;
+	--jap-sans-serif-fonts: "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", "Meiryo", "游ゴシック", "游ゴシック体", "YuGothic", "Yu Gothic", "ＭＳ ゴシック", "MS Gothic", "HiraKakuProN-W3", "TakaoExゴシック", "TakaoExGothic", "Droid Sans Japanese", sans-serif;
+	--jap-serif-fonts: "ヒラギノ明朝 ProN", "Hiragino Mincho ProN", "游明朝", "游明朝体", "YuMincho", "Yu Mincho", "ＭＳ 明朝", "MS Mincho", "HiraMinProN-W3", "TakaoEx明朝", "TakaoExMincho", "Droid Sans Japanese", serif;
+}
+
+html[lang='ja']
+{	--serif-fonts: var(--jap-serif-fonts);
+	--sans-serif-fonts: var(--jap-sans-serif-fonts);
+}
+
+/*==========================================================================================================================================================*/
+/* Base tags - Redefinitions */
+/*==========================================================================================================================================================*/
+*
+{	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 1em;
+	line-height: inherit;
+	color: inherit;
+	font-weight: inherit;
+	font-style: inherit;
+	font-family: inherit;
+	text-indent: 0;
+}
+
+
+/*===============================================================================================================================================*/
+/* Default general settings, font(s), and text size
+/*===============================================================================================================================================*/
+html
+{	color: Black;
+	color: var(--text-color,Black);
+	font-size: 16px;
+	line-height: 1.6em;
+	scroll-behavior: smooth;
+}
+
+body
+{	background-color: White;
+	min-width: 320px;
+	margin: 0 auto;
+	position: relative;
+	font-size: inherit;
+	line-height: inherit;
+	font-weight: normal;
+	font-style: normal;
+	text-align: left;
+	word-wrap: break-word;
+}
+
+/* Font settings */
+/*===============================================================================================================================================*/
+html,
+.sans-serif, .gothic
+{	font-family: sans-serif;
+	font-family: var(--sans-serif-fonts, sans-serif);
+}
+
+.serif, .mincho, .times
+{	font-family: serif;
+	font-family: var(--serif-fonts, serif);
+}
+
+.eng-sans, .eng-sans-serif
+{	font-family: sans-serif;
+	font-family: var(--eng-sans-serif-fonts, sans-serif);
+}
+
+.eng-serif
+{	font-family: serif;
+	font-family: var(--eng-serif-fonts, serif);
+}
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* Media query font size changes */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@media screen and (max-width: 999px)
+{	html
+	{	font-size: 15px;
+	}
+}
+
+@media screen and (max-width: 479px)
+{	html
+	{	font-size: 14px;
+	}
+}
+
+
+
+/* HTML5 resets */
+/*===============================================================================================================================================*/
+header, main, footer,
+section, article,
+nav, aside,
+figure, figcaption,
+address
+{	display: block;
+	line-height: 1.6em;
+}
+
+/* Block tags reset line heights as font size changes are likely */
+/*===============================================================================================================================================*/
+div,
+h1, h2, h3, h4, h5, h6, p,
+ol, ul, li, dl, dt, dd,
+table, tbody, tfoot, thead, tr, th, td,
+blockquote,
+form,
+fieldset, legend,
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=reset]):not([type=range]),
+textarea,
+select, option
+{	line-height: 1.6em;
+}
+
+/* The small tag, by default, should have a set size reduction */
+small
+{	font-size: 0.8em;
+}
+
+/* Fixes potential indentation bugs that may arise with inline-block before/afters */
+::before, ::after
+{	text-indent: 0;
+}
+
+/* iPhone or Safari overrides */
+button,
+input[type=submit], input[type=reset]
+{	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+	appearance: none;
+	border-radius: 0;
+}
+
+
+/*==========================================================================================================================================================*/
+/* 	Image resets - these settings are suitale for responsive design and scaling. 
+	Special class of emoji possible to make individual images or images that are children inline-blocks, however. */
+/*==========================================================================================================================================================*/
+img
+{	max-width: 100%;
+	height: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.emoji img,
+img.emoji
+{	display: inline-block;
+}
+
+/*==========================================================================================================================================================*/
+/* 	Link resets - Links don't really need to be underlined or have a default color unless clearly within some text. */
+/*==========================================================================================================================================================*/
+/* Give links no default color nor underline by default */
+a
+{	color: inherit;
+	text-decoration: none;
+}
+
+a:hover
+{	text-decoration: none;
+}
+
+/* Links clearly within plain text (almost always in a P tag) should look a different color than the text. */ 
+/* To emulate this with other tags, use the .text-link class */
+/*----------------------------------------------------------------------------------------------------------------------------------------------*/
+p a,
+.text-link a, a.text-link
+{	color: #0071BC;
+}
+
+p a:hover, 
+.text-link a:hover, a.text-link:hover,
+p label:hover,
+.text-link label:hover, label.text-link:hover
+{	color: RoyalBlue;
+	color: var(--link-color);
+	text-decoration: underline;
+}
+
+/* For some links (e.g. images), this will provide a simple hover animation for opacity */
+/*----------------------------------------------------------------------------------------------------------------------------------------------*/
+.img-link a:hover,
+a.img-link:hover
+{	opacity: 0.75;
+}
+
+/*==========================================================================================================================================================*/
+/* Clickable area (links, buttons, etc) settings */
+/*==========================================================================================================================================================*/
+/* Clickable areas should have a cursor change to indicate that they are clickable. */
+a, button, label,
+input[type=checkbox], input[type=radio],
+input[type=submit], input[type=reset],
+[onclick]
+{	cursor: pointer;
+}
+
+a:not([href]):not([onclick]),
+button:not([onclick])
+{	cursor: default;
+}
+input[type=text][onclick],
+input[type=password][onclick]
+{	cursor: text;
+}
+
+/*==========================================================================================================================================================*/
+/* List overrides */
+/*==========================================================================================================================================================*/
+ol, ul, li,
+dl, dt, dd
+{	list-style: none;
+	list-style-type: none;
+}
+
+/*==========================================================================================================================================================*/
+/* Table overrides */
+/*==========================================================================================================================================================*/
+table
+{	border-spacing: 0;
+	empty-cells: show;
+	border-collapse: collapse;
+	table-layout: fixed;
+	width: 100%;
+}
+
+table tr th, table tr td
+{	word-wrap: break-word;
+	vertical-align: top;
+	-webkit-text-size-adjust: none;
+}
+
+/*===============================================================================================================================================*/
+/* Dynamic pages and inputs */
+/*==========================================================================================================================================================*/
+input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=reset]):not([type=range]),
+textarea, select
+{	box-sizing: border-box;
+	border: 1px solid;
+	font-size: 16px;	/* Done to ensure no needless auto zooming on iPhones */
+}
+
+textarea
+{	max-width: 100%;
+	resize: vertical;
+}
+
+/*===============================================================================================================================================*/
+/*===============================================================================================================================================*/
+/* Common classes */
+/*===============================================================================================================================================*/
+/*===============================================================================================================================================*/
+
+/*===============================================================================================================================================*/
+/* Device display override classes */
+/*===============================================================================================================================================*/
+
+/* Forced override of display settings. These stay constant regardless of the viewport */
+/* These can also be useful when setting certain classes in JS */
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
+.force-display-none
+{	display: none !important;
+}
+.force-inline
+{	display: inline !important;
+}
+.force-block
+{	display: block !important;
+}
+.force-inline-block, .ib
+{	display: inline-block !important;
+}
+
+/* PC (Desktop) displays  */
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
+.pc, .pc-block
+{	display: block;
+}
+.pc-inline
+{	display: inline;
+}
+.pc-inline-block
+{	display: inline-block;
+}
+
+/* SMT (mobile) are invisible during desktop display */
+.smt, .smt-block, .smt-inline, .smt-inline-block, .smt-ib
+{	display: none;
+}
+
+/* SMT (Mobile) displays */
+/*----------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width: 999px)
+{	.pc, .pc-block, .pc-inline, .pc-inline-block
+	{	display: none;
+	}
+	.smt, .smt-block
+	{	display: block;
+	}
+	.smt-inline
+	{	display: inline;
+	}
+	.smt-inline-block, .smt-ib
+	{	display: inline-block;
+	}
+
+/* smt-change-XXX will change the PC's display type to another */
+	.smt-change-block
+	{	display: block !important;
+	}
+	.smt-change-inline
+	{	display: inline !important;
+	}
+	.smt-change-inline-block, .smt-change-ib
+	{	display: inline-block !important;
+	}
+}
+
+/*===============================================================================================================================================*/
+/*===============================================================================================================================================*/
+/* Other common */
+/*===============================================================================================================================================*/
+/*===============================================================================================================================================*/
+/* Text alignment (should never be overwritten, thus important) */
+.tl
+{	text-align: left !important;
+}
+.tc,
+.tc-smt-tl
+{	text-align: center !important;
+}
+.tr
+{	text-align: right !important;
+}
+.tj
+{	text-align: justify !important;
+}
+
+@media screen and (max-width: 999px)
+{	.tc-smt-tl
+	{	text-align: left !important;
+	}
+}
+
+/* Text appearance */
+.bold
+{	font-weight: bold !important;
+}
+.italic
+{	font-style: italic !important;
+}
+.strike
+{	text-decoration: line-through !important;
+}
+.underline
+{	text-decoration: underline !important;
+}
+
+/*===============================================================================================================================================*/
+/* Widths */
+/*===============================================================================================================================================*/
+.w-auto
+{	width: auto !important;
+}
+.w-100percent,
+.w100percent
+{	width: 100%;
+}
+
+/* max widths */
+.max1500px,.max1400px,.max1300px,
+.max1200px,.max1100px,.max1000px,
+.max900px,.max800px,.max700px,.max600px,.max500px,
+.max400px,.max300px,.max250px,.max200px,.max150px,.max100px,
+.max75px,.max50px
+{	margin-left: auto;
+	margin-right: auto;
+}
+.max1500px
+{	max-width: 1500px !important;
+}
+.max1400px
+{	max-width: 1400px !important;
+}
+.max1300px
+{	max-width: 1300px !important;
+}
+.max1200px
+{	max-width: 1200px !important;
+}
+.max1100px
+{	max-width: 1100px !important;
+}
+.max1000px
+{	max-width: 1000px !important;
+}
+.max900px
+{	max-width: 900px !important;
+}
+.max800px
+{	max-width: 800px !important;
+}
+.max700px
+{	max-width: 700px !important;
+}
+.max600px
+{	max-width: 600px !important;
+}
+.max500px
+{	max-width: 500px !important;
+}
+.max400px
+{	max-width: 400px !important;
+}
+.max300px
+{	max-width: 300px !important;
+}
+.max250px
+{	max-width: 250px !important;
+}
+.max200px
+{	max-width: 200px !important;
+}
+.max150px
+{	max-width: 150px !important;
+}
+.max100px
+{	max-width: 100px !important;
+}
+.max75px
+{	max-width: 75px !important;
+}
+.max50px
+{	max-width: 50px !important;
+}
+
+/* min-widths */
+.min1em, .min2em, .min3em, .min4em, .min5em,
+.min6em, .min7em, .min8em, .min9em, .min10em
+{	display: inline-block;
+}
+
+.min1em
+{	min-width: 1em;
+}
+.min2em
+{	min-width: 2em;
+}
+.min3em
+{	min-width: 3em;
+}
+.min4em
+{	min-width: 4em;
+}
+.min5em
+{	min-width: 5em;
+}
+.min6em
+{	min-width: 6em;
+}
+.min7em
+{	min-width: 7em;
+}
+.min8em
+{	min-width: 8em;
+}
+.min9em
+{	min-width: 9em;
+}
+.min10em
+{	min-width: 10em;
+}
+
+/*===============================================================================================================================================*/
+/* Simple inline block formatting with b tags */
+/*===============================================================================================================================================*/
+.b-ib b,
+.b-ib-smt-i b
+{	display: inline-block;
+	font-weight: inherit;
+}
+
+@media screen and (max-width: 999px)
+{	.b-ib-smt-i b
+	{	display: inline;
+	}
+}
+
+/*===============================================================================================================================================*/
+/* Pre-determined margins settings that do not change with screen size */
+/*===============================================================================================================================================*/
+/* MLR */
+.mlr0,.mrl0
+{	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
+.mlr-auto,.mrl-auto
+{	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+/* MT */
+.mt0
+{	margin-top: 0 !important;
+}
+.mt5
+{	margin-top: 5px !important;
+}
+.mt10
+{	margin-top: 10px !important;
+}
+.mt15
+{	margin-top: 15px !important;
+}
+.mt20
+{	margin-top: 20px !important;
+}
+.mt30
+{	margin-top: 30px !important;
+}
+.mt40
+{	margin-top: 40px !important;
+}
+
+/* MB */
+.mb0
+{	margin-bottom: 0 !important;
+}
+.mb5
+{	margin-bottom: 5px !important;
+}
+.mb10
+{	margin-bottom: 10px !important;
+}
+.mb15
+{	margin-bottom: 15px !important;
+}
+.mb20
+{	margin-bottom: 20px !important;
+}
+.mb30
+{	margin-bottom: 30px !important;
+}
+.mb40
+{	margin-bottom: 40px !important;
+}
+
+/* Give auto bottom margins tags for spacing */
+.parent-not-last-mb10 > *:not(:last-child),
+.not-last-mb10:not(:last-child)
+{	margin-bottom: 10px;
+}
+
+.p-mb p:not(:last-child),
+.p-mb-direct > p:not(:last-child),
+.oh-mb > .oh:not(:last-child),
+.parent-not-last-mb20 > *:not(:last-child),
+.not-last-mb20:not(:last-child)
+{	margin-bottom: 20px;
+}
+
+.parent-not-last-mb30 > *:not(:last-child),
+.not-last-mb30:not(:last-child)
+{	margin-bottom: 30px;
+}
+
+.parent-not-last-mb40 > *:not(:last-child),
+.not-last-mb40:not(:last-child)
+{	margin-bottom: 40px;
+}
+
+/*===============================================================================================================================================*/
+/* Pre-determined padding settings that do not change with screen size */
+/*===============================================================================================================================================*/
+/* PT */
+.pt0
+{	padding-top: 0 !important;
+}
+.pt10
+{	padding-top: 10px !important;
+}
+.pt20
+{	padding-top: 20px !important;
+}
+
+/* PB */
+.pb0
+{	padding-bottom: 0 !important;
+}
+.pb10
+{	padding-bottom: 10px !important;
+}
+.pb20
+{	padding-bottom: 20px !important;
+}
+
+/* PLR/PRL */
+.plr0,.prl0
+{	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+.plr10,.prl10
+{	padding-left: 10px !important;
+	padding-right: 10px !important;
+}
+.plr20,.prl20
+{	padding-left: 20px !important;
+	padding-right: 20px !important;
+}
+
+/*===============================================================================================================================================*/
+/* Floats */
+/*===============================================================================================================================================*/
+.fl
+{	float: left;
+}
+.fr
+{	float: right;
+}
+
+/*===============================================================================================================================================*/
+/* Overflow */
+/*===============================================================================================================================================*/
+.oh,
+.oh-smt-ov
+{	overflow: hidden;
+}
+.ov
+{	overflow: visible;
+}
+
+/* ------------------------------------------------------------ */
+@media screen and (max-width: 999px)
+{	.oh-smt-ov
+	{	overflow: visible;
+	}
+}
+
+/*===============================================================================================================================================*/
+/* Indenting (Generally for easily formatting lists) */
+/*===============================================================================================================================================*/
+.indent1
+{	padding-left: 1em;
+	text-indent: -1em;
+}
+.indent2
+{	padding-left: 2em;
+	text-indent: -2em;
+}
+.indent3
+{	padding-left: 3em;
+	text-indent: -3em;
+}
+.indent4
+{	padding-left: 4em;
+	text-indent: -4em;
+}
+.indent5
+{	padding-left: 5em;
+	text-indent: -5em;
+}
+.indent6
+{	padding-left: 6em;
+	text-indent: -6em;
+}
+.indent7
+{	padding-left: 7em;
+	text-indent: -7em;
+}
+.indent8
+{	padding-left: 8em;
+	text-indent: -8em;
+}
+.indent9
+{	padding-left: 9em;
+	text-indent: -9em;
+}
+.indent10
+{	padding-left: 10em;
+	text-indent: -10em;
+}
